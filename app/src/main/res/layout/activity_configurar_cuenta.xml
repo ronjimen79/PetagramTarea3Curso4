@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ronicode.petagramserverendpoint.ConfigurarCuenta">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/color_texto_blanco"
+        >
+
+        <LinearLayout
+            android:id="@+id/LCuentaUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <include
+                android:id="@+id/miActionBar"
+                layout="@layout/actionbar"
+                >
+            </include>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_cuenta"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_below="@id/miActionBar"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tieUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nombre_usuario"
+                    >
+                </android.support.design.widget.TextInputEditText>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnGuardarCuenta"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_button"
+                android:text="@string/boton_guardar_cuenta"
+                android:theme="@style/Enviarcomentario"
+                android:layout_gravity="clip_vertical"
+                android:onClick="guardarUsuario"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

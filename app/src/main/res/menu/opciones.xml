@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itmenuContacto"
+        android:title="@string/item_contacto"
+        android:orderInCategory="100"
+        >
+    </item>
+
+    <item
+        android:id="@+id/itmenuAcercade"
+        android:title="@string/item_acercade"
+        android:orderInCategory="101"
+        >
+
+    </item>
+
+    <item
+        android:id="@+id/itmenuConfigurarcuenta"
+        android:title="@string/item_configurarcuenta"
+        android:orderInCategory="102"
+        >
+
+    </item>
+
+    <item
+        android:id="@+id/itmenuRecibirnotificaciones"
+        android:title="@string/item_recibirnotificaciones"
+        android:orderInCategory="103"
+        >
+
+    </item>
+
+</menu>

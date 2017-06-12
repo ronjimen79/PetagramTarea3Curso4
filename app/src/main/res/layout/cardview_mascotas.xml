@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/cvMascotas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_bottom"
+    card_view:cardCornerRadius="@dimen/corner_radius"
+    card_view:cardElevation="@dimen/elevacion_cardview"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_CV"
+        >
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/margin_top_cardview"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/perro_6_shaggy"
+            />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/imgFavoritoCV"
+                    android:layout_width="@dimen/foto_width"
+                    android:layout_height="@dimen/foto_height"
+                    android:layout_gravity="center"
+                    android:src="@drawable/dog_bone_48"
+                    />
+
+                <TextView
+                    android:id="@+id/tvNombreCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/name_mascota"
+                    android:textSize="@dimen/tamaño_texto"
+                    android:paddingLeft="@dimen/padding_left"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:baselineAligned="true"
+                android:layout_gravity="right"
+                >
+
+                <TextView
+                    android:id="@+id/tvFavoritoCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pfavoritos"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/tamaño_texto"
+                    android:layout_column="1"
+                    android:paddingRight="@dimen/padding_right"
+                    />
+
+                <ImageView
+                    android:id="@+id/imgsum"
+                    android:layout_width="@dimen/foto_width"
+                    android:layout_height="@dimen/foto_height"
+                    android:src="@drawable/dog_bone_filled"
+                    android:layout_gravity="right"
+                    android:layout_column="1"
+                    />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

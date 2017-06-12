@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ronicode.petagramserverendpoint.AcercaDe">
+
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
+        >
+    </include>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvAcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/miActionBar"
+        android:elevation="@dimen/elevacion_cardview"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/profile"
+                />
+
+            <TextView
+                android:id="@+id/tvAcercade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/item_acercade"
+                android:textSize="@dimen/texto_acercade"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:layout_below="@id/imgPerfil"
+                />
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:textSize="@dimen/texto_descripcion"
+                android:text="@string/descripcion_bio"
+                android:layout_below="@id/tvAcercade"
+                />
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

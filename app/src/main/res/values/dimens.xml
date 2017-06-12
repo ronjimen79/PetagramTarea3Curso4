@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="elevacion_actionbar">4dp</dimen>
+    <dimen name="elevacion_cardview">4dp</dimen>
+    <dimen name="texto_acercade">27dp</dimen>
+    <dimen name="margin_top">7dp</dimen>
+    <dimen name="texto_descripcion">16dp</dimen>
+    <dimen name="padding_RV">3dp</dimen>
+    <dimen name="margin_bottom">16dp</dimen>
+    <dimen name="margin_topRV">3dp</dimen>
+    <dimen name="padding_CV">16dp</dimen>
+    <dimen name="foto_height">30dp</dimen>
+    <dimen name="foto_width">30dp</dimen>
+    <dimen name="tamaño_texto">25sp</dimen>
+    <dimen name="padding_left">10dp</dimen>
+    <dimen name="padding_right">10dp</dimen>
+    <dimen name="padding_top">25dp</dimen>
+    <dimen name="margin_fab">16dp</dimen>
+    <dimen name="elevacion_fab">6dp</dimen>
+    <dimen name="margin_right">16dp</dimen>
+    <dimen name="margin_top_button">40dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
+    <dimen name="margin_top_cardview">15dp</dimen>
+    <dimen name="margin_top_cuenta">10dp</dimen>
+    <dimen name="margin_left">16dp</dimen>
+    <dimen name="padding">6dp</dimen>
+</resources>
