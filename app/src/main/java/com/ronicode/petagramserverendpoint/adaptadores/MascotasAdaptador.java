@@ -50,7 +50,7 @@ public class MascotasAdaptador extends RecyclerView.Adapter<MascotasAdaptador.ma
     }
 
     @Override
-    public MascotasAdaptador.mascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public mascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_grid_mascotas, parent, false);
         return new mascotaViewHolder(itemView);

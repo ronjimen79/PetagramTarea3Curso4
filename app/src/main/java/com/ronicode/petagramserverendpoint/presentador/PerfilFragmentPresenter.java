@@ -56,13 +56,6 @@ public class PerfilFragmentPresenter implements IPerfilFragmentPresenter {
     }
 
     @Override
-    public void mostrarMascotasRV() {
-
-        iPerfilFragmentView.inicializarMascotasAdaptadorRV(iPerfilFragmentView.crearAdaptador(detalles));
-        iPerfilFragmentView.generarGridLayout();
-    }
-
-    @Override
     public void obtenerMediosRecientes() {
 
         RestApiAdaptador restApiAdaptador = new RestApiAdaptador();
@@ -120,4 +113,12 @@ public class PerfilFragmentPresenter implements IPerfilFragmentPresenter {
         });
 
     }
+
+    @Override
+    public void mostrarMascotasRV() {
+
+        iPerfilFragmentView.inicializarMascotasAdaptadorRV(iPerfilFragmentView.crearAdaptador(detalles));
+        iPerfilFragmentView.generarGridLayout();
+    }
+
 }

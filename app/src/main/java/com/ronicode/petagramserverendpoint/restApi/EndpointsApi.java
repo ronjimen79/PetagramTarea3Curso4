@@ -1,5 +1,6 @@
 package com.ronicode.petagramserverendpoint.restApi;
 
+import com.ronicode.petagramserverendpoint.notificaciones.model.MediaToqueNotifResponse;
 import com.ronicode.petagramserverendpoint.notificaciones.model.UsuarioResponse;
 import com.ronicode.petagramserverendpoint.restApi.model.MascotasResponse;
 
@@ -33,4 +34,8 @@ public interface EndpointsApi {
     Call<UsuarioResponse> registrarTokenId(@Field("id_dispositivo") String id_dispositivo,
                                            @Field("id_usuario_instagram") String id_usuario_instagram);
 
+    @GET(ConstantesRestApi.KEY_GET_TOQUE_MASCOTA)
+    Call<MediaToqueNotifResponse> enviarNotificacionToque(@Path("id_foto_instagram") String id_foto_instagram,
+                                                          @Path("id_usuario_instagram") String id_usuario_instagram,
+                                                          @Path("id_dispositivo") String id_dispositivo);
 }

@@ -39,5 +39,6 @@ public final class ConstantesRestApi {
 
     public static final String ROOT_URL_TOKEN = "https://limitless-cliffs-10593.herokuapp.com/";
     public static final String KEY_POST_ID_TOKEN = "registrar-usuario";
+    public static final String KEY_GET_TOQUE_MASCOTA = "toque-mascota/{id_foto_instagram}/{id_usuario_instagram}/{id_dispositivo}";
 
 }

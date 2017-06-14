@@ -94,6 +94,7 @@ public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPrese
                 editor.commit();
 
                 for (int i = 0; i <detalles.size(); i++){
+
                     id = detalles.get(i).getId();
                     username = detalles.get(i).getNombreCompleto();
                     obtenerMediaRecentFollows();
@@ -101,7 +102,6 @@ public class RecyclerViewFragmentPresenter implements IRecyclerViewFragmentPrese
                 }
 
                 detalles.clear();
-
 
             }
 

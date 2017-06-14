@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.ronicode.petagramserverendpoint.adaptadores.PageAdaptador;
@@ -110,26 +111,56 @@ public class ListaMascota extends AppCompatActivity {
 
     public void obtenerDatos(){
 
-        String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d(TAG, "ID_DISPOSITIVO: " + token);
-        Log.d(TAG, "ID_USUARIO_INSTAGRAM: " + id);
+        SharedPreferences miCuentaPref = getSharedPreferences("MiCuenta", Context.MODE_PRIVATE);
+        String idDispo = miCuentaPref.getString("idDispositivo", null);
+        String idUsuInstagram = miCuentaPref.getString("idDispositi", null);
+
+        if (idDispo == null){
+            Log.v("Id Dispositivo","null");
+            Log.v("Cuenta",idUsuInstagram);
+            idDispo = FirebaseInstanceId.getInstance().getToken();
+            Log.v("Id Dispositivo_reg", idDispo);
+            enviarIdDispositivo(idDispo, idUsuInstagram);
+        }else {
+            Log.v("Id Dispositivo", idDispo);
+            Toast.makeText(ListaMascota.this, "Dispositivo ya registrado", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void enviarIdDispositivo(String idDispo, String idUsuInstagram) {
 
         RestApiAdaptador restApiAdaptador = new RestApiAdaptador();
         EndpointsApi endpointsApi = restApiAdaptador.establecerConexionRestAPI();
-        Call<UsuarioResponse> usuarioResponseCall = endpointsApi.registrarTokenId(token, id);
+        Call<UsuarioResponse> usuarioResponseCall = endpointsApi.registrarTokenId(idDispo, idUsuInstagram);
 
         usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
             @Override
             public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
                 UsuarioResponse usuarioResponse = response.body();
+                Log.d("response(HEROKU)", usuarioResponse.toString());
+                Log.d("ID(HEROKU)", usuarioResponse.getId_registro());
+                Log.d("ID_DISPO(HEROKU)", usuarioResponse.getId_dispositivo());
+                Log.d("ID_USUARIO(HEROKU)", usuarioResponse.getId_usuario_instagram());
+                SharedPreferences miCuenta = getSharedPreferences("MiCuenta", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = miCuenta.edit();
+                editor.putString("idDispositivo", usuarioResponse.getId_registro());
+                editor.commit();
+                Toast.makeText(ListaMascota.this, "Registro dispositivo exitoso", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                SharedPreferences miCuenta = getSharedPreferences("MiCuenta", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = miCuenta.edit();
+                editor.putString("idDispositivo",null);
+                editor.commit();
+                Toast.makeText(ListaMascota.this, "Error en registro dispositivo", Toast.LENGTH_LONG).show();
 
             }
         });
     }
+
+
 
     private ArrayList<Fragment> adicionarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();

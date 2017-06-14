@@ -49,9 +49,9 @@ public class ConfigurarCuenta extends AppCompatActivity {
 
         SharedPreferences FollowPreferencia = getSharedPreferences("FollowsSandbox", Context.MODE_PRIVATE);
         String ArregloUserName[] = FollowPreferencia.getString("username", "").split(",");
-        String ArregloId [] = FollowPreferencia.getString("id", "").split(",");
+        String ArregloId[] = FollowPreferencia.getString("id", "").split(",");
 
-        for (int i = 0; i <ArregloUserName.length; i++){
+        for (int i = 0; i <ArregloUserName.length ; i++){
 
             x = 1;
 
